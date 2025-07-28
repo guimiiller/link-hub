@@ -1,0 +1,109 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.logoFavorites{
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    cursor: pointer;
+}
+
+.header{
+    margin-top: 80px;
+    text-align: center;
+}
+
+.containerContent{
+    max-width: 460px;
+    width: 100%;
+}
+
+.formAddLink{
+    width: 100%;
+    margin-top: 40px;
+}
+
+.formAddLink input{
+    padding: 10px 0 10px 7px;
+    border-radius: 9px;
+    border: none;
+    border: 2px solid #a8a8a8;
+    width: 100%;
+    outline: none;
+    margin: 7px 0;
+}
+
+.formAddLink button{
+    width: 100%;
+    border: none;
+    border: 2px solid #000;
+    border-radius: 10px;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 0;
+    font-size: 15px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.favoritesList{
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.favoritesList li{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    border: 2px solid #2c3840;
+}
+
+.favoritesList button{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform .3s;
+}
+
+.favoritesList button:hover{
+    transform: scale(1.1);
+}
+
+.logoutButton{
+    background: transparent;
+    border: none;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    transition: transform .3s;
+    cursor: pointer;
+}
+
+.logoutButton:hover{
+    transform: scale(1.1);
+}
+
+
+@media(max-width: 426px){
+    .containerContent{
+        max-width: 350px;
+    }
+    
+    .favoritesList li{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

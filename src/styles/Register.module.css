@@ -1,0 +1,55 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    background-image: url('/backgroundRegister.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.logoRegister{
+    margin-bottom: 20px;
+}
+
+.container .contentLogin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 480px;
+    width: 100%;
+    border: 2px solid #bababa;
+    border-radius: 7px;
+    padding: 30px;
+    margin-bottom: 50px;
+}
+
+.contentLogin div{
+    width: 100%;
+}
+
+.contentLogin input{
+    padding: 9px 0 9px 7px;
+    border-radius: 9px;
+    border: none;
+    border: 2px solid #bababa;
+    width: 100%;
+    outline: none;
+    margin: 7px 0;
+    background: transparent;
+}
+
+.contentLogin .registerButton{
+    width: 100%;
+    padding: 10px 0 10px 5px;
+    background-color: #000;
+    border: none;
+    border-radius: 9px;
+    color: #fff;
+    cursor: pointer;
+    margin: 15px 0 0 0;
+    font-size: 14px;
+}
