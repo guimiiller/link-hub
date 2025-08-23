@@ -12,10 +12,10 @@ export async function PUT(req: Request) {
     return NextResponse.json({ error: 'Não autorizado' }, { status: 401 })
   }
 
-  const { oldLink, newLink } = await req.json()
+  const { oldLink, newLink, newCategory } = await req.json()
 
-  if (!oldLink || !newLink) {
-    return NextResponse.json({ error: 'Links inválidos' }, { status: 400 })
+  if (!oldLink || !newLink || !newCategory) {
+    return NextResponse.json({ error: 'Dados inválidos' }, { status: 400 })
   }
 
   const user = await User.findOne({ email: session.user.email })
@@ -24,12 +24,16 @@ export async function PUT(req: Request) {
     return NextResponse.json({ error: 'Usuário não encontrado' }, { status: 404 })
   }
 
-  const index = user.favorites.indexOf(oldLink)
+  const index = user.favorites.findIndex(
+    (fav: { link: string; category: string }) => fav.link === oldLink
+  )
+
   if (index === -1) {
     return NextResponse.json({ error: 'Link não encontrado' }, { status: 404 })
   }
 
-  user.favorites[index] = newLink
+  // Atualiza os dados do link encontrado
+  user.favorites[index] = { link: newLink, category: newCategory }
   await user.save()
 
   return NextResponse.json({ message: 'Link editado com sucesso' })

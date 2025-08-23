@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LinkHub 🔗
 
-## Getting Started
+![preview](./preview.jpeg)
 
-First, run the development server:
+> Plataforma para usuários adicionarem, gerenciarem e categorizarem seus links favoritos, com opções de edição, exclusão, compartilhamento e filtro por categoria.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+O **LinkHub** é um projeto em desenvolvimento feito com **Next.js 15 (App Router)** que visa oferecer uma solução simples e moderna para organizar links, categorizá-los e compartilhá-los de maneira prática.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Este projeto está sendo desenvolvido para consolidar meus conhecimentos em **full stack moderno**, utilizando autenticação, gerenciamento de links, categorias e integração entre frontend e backend com tecnologias atuais.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Tecnologias
 
-## Learn More
+* **Next.js 15 (App Router + Server Actions)**
+* **TypeScript**
+* **MongoDB + Mongoose**
+* **NextAuth.js (autenticação)**
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 💻 O que estou aprendendo e construindo
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🧠 Backend com Next.js e MongoDB
 
-## Deploy on Vercel
+* **Criação de rotas server-side com App Router**, aproveitando as novidades do Next.js 15 para APIs e Server Actions.
+* **Modelagem eficiente do banco de dados com MongoDB e Mongoose** para armazenar usuários e links favoritos com categorias.
+* **Implementação de autenticação segura** com NextAuth para controle de acesso e gerenciamento de sessões.
+* **CRUD completo de links**, permitindo adicionar, editar, deletar e organizar links por categoria.
+* **Normalização de dados antigos e integração de categorias**, garantindo compatibilidade com links previamente adicionados.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 🎯 Frontend com Next.js
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* **Construção de interface moderna e responsiva** para fácil navegação e uso dos recursos.
+* **Formulários controlados** para adicionar links e definir categorias.
+* **Exibição e filtro de links por categoria**, tornando a experiência mais organizada.
+* **Botões de compartilhamento e edição inline**, para melhor interação do usuário.
+* **Integração em tempo real com backend**, possibilitando atualização imediata dos links e categorias.
+
+---
+
+## 📲 Funcionalidades (em desenvolvimento)
+
+* Cadastro e login de usuários com autenticação segura.
+* Adição, edição e exclusão de links favoritos.
+* Definição e edição de categorias para cada link.
+* Filtro de links por categoria.
+* Compartilhamento de links diretamente da plataforma.
+* Dashboard simples e intuitivo para visualização de todos os links e suas categorias.
+* Interface otimizada para desktop e mobile.
+
+---
+
+## 📝 Observações
+
+O **LinkHub** ainda está em desenvolvimento, mas já representa um avanço importante na minha jornada como desenvolvedor full stack. A aplicação explora os recursos mais recentes do **Next.js 15**, unindo backend e frontend em um único projeto moderno, com foco em organização, experiência do usuário e escalabilidade.
+
+---
+
+## 📨 Contato
+
+📧 [guilhermemillerblack@gmail.com](mailto:guilhermemillerblack@gmail.com)
+
+---

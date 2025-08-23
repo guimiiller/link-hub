@@ -22,7 +22,11 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'User not found' }, { status: 404 })
   }
 
-  user.favorites = user.favorites.filter((fav: string) => fav !== link)
+  // Filtra e remove apenas o objeto com o link correspondente
+  user.favorites = user.favorites.filter(
+    (fav: { link: string; category: string }) => fav.link !== link
+  )
+
   await user.save()
 
   return NextResponse.json({ favorites: user.favorites })

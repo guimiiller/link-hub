@@ -4,8 +4,13 @@ const userSchema = new mongoose.Schema({
   name: String,
   email: String,
   password: String,
-  favorites: [String] 
-})
+  favorites: [
+    {
+      link: String,
+      category: String, // Nova propriedade para categorias
+    },
+  ],
+});
 
-const User = mongoose.models.User || mongoose.model('User', userSchema)
-export default User
+const User = mongoose.models.User || mongoose.model("User", userSchema);
+export default User;
