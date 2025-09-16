@@ -3,13 +3,7 @@ import { authOptions } from "@/lib/authOptions"
 import { redirect } from "next/navigation"
 import FavoritesClient from "@/components/FavoritesClient"
 
-interface Props {
-  params: {
-    userId: string
-  }
-}
-
-export default async function FavoritesPage({ params }: Props) {
+export default async function FavoritesPage() {
   const session = await getServerSession(authOptions)
 
   if (!session) {
