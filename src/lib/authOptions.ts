@@ -19,7 +19,7 @@ export const authOptions: AuthOptions = {
         if (!email || !password) return null;
 
         try {
-          const baseUrl = process.env.NEXTAUTH_URL || "http://localhost:3000";
+          const baseUrl = process.env.NEXTAUTH_URL || "https://link-hub-smoky.vercel.app/";
           const res = await fetch(`${baseUrl}/api/verify-user`, {
             method: "POST",
             body: JSON.stringify({ email, password }),
