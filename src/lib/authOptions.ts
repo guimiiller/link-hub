@@ -19,7 +19,10 @@ export const authOptions: AuthOptions = {
         if (!email || !password) return null;
 
         try {
-          const baseUrl = process.env.NEXTAUTH_URL || "https://link-hub-smoky.vercel.app";
+          const baseUrl = process.env.VERCEL_URL
+            ? `https://${process.env.VERCEL_URL}`
+            : "http://localhost:3000";
+
           const res = await fetch(`${baseUrl}/api/verify-user`, {
             method: "POST",
             body: JSON.stringify({ email, password }),
@@ -27,7 +30,14 @@ export const authOptions: AuthOptions = {
           });
 
           if (!res.ok) return null;
-          return await res.json();
+
+          const user = await res.json();
+
+          if (user && user.email) {
+            return { id: user.id, name: user.name, email: user.email };
+          }
+
+          return null;
         } catch (error) {
           console.error("Authorize error:", error);
           return null;
