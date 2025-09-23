@@ -1,4 +1,3 @@
-// src/lib/authOptions.ts
 import { AuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
@@ -19,7 +18,10 @@ export const authOptions: AuthOptions = {
         if (!email || !password) return null;
 
         try {
-          const res = await fetch("/api/verify-user", {
+          const baseUrl =
+            process.env.NEXTAUTH_URL || "http://localhost:3000";
+
+          const res = await fetch(`${baseUrl}/api/verify-user`, {
             method: "POST",
             body: JSON.stringify({ email, password }),
             headers: { "Content-Type": "application/json" },
