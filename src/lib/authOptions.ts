@@ -3,6 +3,9 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
 import clientPromise from "./mongodb";
+import User from "@/models/User";
+import { connectDB } from "@/lib/mongoose";
+import { compare } from "bcryptjs";
 
 export const authOptions: AuthOptions = {
   adapter: MongoDBAdapter(clientPromise),
@@ -18,24 +21,19 @@ export const authOptions: AuthOptions = {
         if (!email || !password) return null;
 
         try {
-          const baseUrl =
-            process.env.NEXTAUTH_URL || "http://localhost:3000";
+          await connectDB();
 
-          const res = await fetch(`${baseUrl}/api/verify-user`, {
-            method: "POST",
-            body: JSON.stringify({ email, password }),
-            headers: { "Content-Type": "application/json" },
-          });
+          const user = await User.findOne({ email });
+          if (!user) return null;
 
-          if (!res.ok) return null;
+          const isValid = await compare(password, user.password);
+          if (!isValid) return null;
 
-          const user = await res.json();
-
-          if (user && user.email) {
-            return { id: user.id, name: user.name, email: user.email };
-          }
-
-          return null;
+          return {
+            id: user._id.toString(),
+            name: user.name,
+            email: user.email,
+          };
         } catch (error) {
           console.error("Authorize error:", error);
           return null;
