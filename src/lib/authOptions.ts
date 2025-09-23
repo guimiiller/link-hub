@@ -19,11 +19,7 @@ export const authOptions: AuthOptions = {
         if (!email || !password) return null;
 
         try {
-          const baseUrl = process.env.VERCEL_URL
-            ? `https://${process.env.VERCEL_URL}`
-            : "http://localhost:3000";
-
-          const res = await fetch(`${baseUrl}/api/verify-user`, {
+          const res = await fetch("/api/verify-user", {
             method: "POST",
             body: JSON.stringify({ email, password }),
             headers: { "Content-Type": "application/json" },
